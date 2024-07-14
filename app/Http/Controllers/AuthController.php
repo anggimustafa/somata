@@ -56,7 +56,9 @@ class AuthController extends Controller
         if($user){
             $data_user = DB::table('user_organisasi')->where('Organisasi_id', $request->organisasi_id)
                                             ->first();
-            return view('dashboard.index', compact('user','data_user'));
+
+            return redirect('/dashboard?id=' . $request->organisasi_id);
+
         }
     }
 }

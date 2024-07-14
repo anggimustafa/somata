@@ -25,7 +25,7 @@
                       <div class="col col-stats ms-3 ms-sm-3 border-start border-danger">
                         <div class="numbers">
                           <p class="card-category">Pendaftaran</p>
-                          <h4 class="card-title"><b>1</b></h4>
+                          <h4 class="card-title"><b>{{ $pendaftars }}</b></h4>
                         </div>
                       </div>
                     </div>

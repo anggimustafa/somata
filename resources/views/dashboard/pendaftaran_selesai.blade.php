@@ -24,6 +24,7 @@
     <thead>
       <tr>
         <th scope="col">Aksi</th>
+        <th scope="col">Status</th>
         <th scope="col">NIM</th>
         <th scope="col">Nama</th>
         <th scope="col">Email</th>
@@ -42,6 +43,11 @@
                   Lihat
               </button>
           </td>
+          @if ($status[$key] == 'Diterima')
+            <td class="text-success">{{$status[$key]}}</td>
+          @else
+            <td class="text-danger">{{$status[$key]}}</td>
+          @endif
           <td>{{$mahasiswa->NIM}}</td>
           <td>{{$mahasiswa->Nama_Lengkap}}</td>
           <td>{{$mahasiswa->Email}}</td>

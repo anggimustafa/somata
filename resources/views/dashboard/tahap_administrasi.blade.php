@@ -137,22 +137,22 @@
           <span>NIM : </span><h3></h3>
           <form action="/notifikasi" method="POST">
             @csrf
-              <input id="nim-terima" type="hidden" name="nim" value="">
+              <input id="nim-terima" type="hidden" name="nim" value="" required>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Judul</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="judul">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="judul" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Isi Pemberitahuan</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="isi"></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="isi" required></textarea>
             </div>
             <div class="mb-3">
               <label for="link_group_wa" class="form-label">Link Group WA</label>
-              <input type="text" class="form-control" id="link_group_wa" placeholder="Enter link group WA" name="link">
+              <input type="text" class="form-control" id="link_group_wa" placeholder="Enter link group WA" name="link" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlTextarea1" class="form-label">Langkah Selanjutnya</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="langkah"></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="langkah" required></textarea>
             </div>
             <input type="hidden" name="organisasi_id" value="{{$data_user->Organisasi_id}}">
             <input type="hidden" name="status" value="diterima">
@@ -168,7 +168,7 @@
   </div>
 
    <!-- Modal Penolakan -->
-   <div class="modal fade" id="ModalPenolakan" tabindex="-1" aria-labelledby="ModalPenerimaanLabel" aria-hidden="true">
+   <div class="modal fade" id="ModalPenolakan" tabindex="-1" aria-labelledby="ModalPenolakanLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -182,15 +182,15 @@
               <input id="nim-tolak" type="hidden" name="nim" value="">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Judul</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="judul">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="judul" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Isi Pemberitahuan</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="isi"></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="isi" required></textarea>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlTextarea1" class="form-label">Langkah Selanjutnya</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="langkah"></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="langkah" required></textarea>
             </div>
             <input type="hidden" name="organisasi_id" value="{{$data_user->Organisasi_id}}">
             <input type="hidden" name="status" value="ditolak">

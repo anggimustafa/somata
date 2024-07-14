@@ -60,7 +60,7 @@
           @csrf
           <div class="mb-3">
             <label for="judul" class="form-label">Judul</label>
-            <input type="text" class="form-control" id="judul" placeholder="Masukkan judul" name="judul">
+            <input type="text" class="form-control" id="judul" placeholder="Masukkan judul" name="judul" required>
           </div>
           <div class="mb-3">
             <label for="kategori" class="form-label">Kategori</label>
@@ -72,15 +72,15 @@
           </div>
           <div class="mb-3">
             <label for="dateInput" class="form-label">Pembukaan Pendaftaran</label>
-            <input type="date" class="form-control" id="dateInput" name="datePembukaan">
+            <input type="date" class="form-control" id="dateInput" name="datePembukaan" required>
           </div>
           <div class="mb-3">
             <label for="dateInput" class="form-label">Penutupan Pendaftaran</label>
-            <input type="date" class="form-control" id="dateInput" name="datePenutupan">
+            <input type="date" class="form-control" id="dateInput" name="datePenutupan" required>
           </div>
           <div class="mb-3">
             <label for="isiPost" class="form-label">Isi Postingan</label>
-            <input id="isiPost" type="hidden" name="isi">
+            <input id="isiPost" type="hidden" name="isi" required>
             <trix-editor input="isiPost"></trix-editor>
           </div>
           <div class="mb-3">

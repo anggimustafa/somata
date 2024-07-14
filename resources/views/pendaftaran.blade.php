@@ -27,7 +27,7 @@
             </div>
             <div class="d-flex justify-content-end mx-5">
                 <a class="border border-dark rounded btn text-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#profilModal">
-                    <img src="https://api.dicebear.com/9.x/adventurer/svg?seed={{$user->NIM}}" alt="" width="35px">
+                    <img src="https://avatar.iran.liara.run/public/1" alt="" width="35px">
                     <span class="mx-2">Profil</span>
                 </a>
             </div>
@@ -43,7 +43,7 @@
             @csrf
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Motivasi Ikut Organisasi</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="motivasi"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="motivasi" required></textarea>
             </div>
                 <input type="hidden" name="nim" value="{{$user->NIM}}">
                 <input type="hidden" name="postingan_id" value="{{$postingan_id}}">
@@ -88,7 +88,7 @@
             <div class="col-5  mx-3 bg-light shadow rounded py-2">
                 <h5 class="text-center"><b>Profil</b></h5>
                 <div class="d-flex justify-content-center mb-3">
-                    <img src="https://api.dicebear.com/9.x/adventurer/svg?seed={{$user->NIM}}" alt="" style="border-radius:50px" width="200px">
+                    <img src="https://avatar.iran.liara.run/public/1" alt="" style="border-radius:50px" width="200px">
                 </div>
                 <div class="col-12">
                     <div class="row">

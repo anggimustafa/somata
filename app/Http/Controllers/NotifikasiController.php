@@ -61,7 +61,8 @@ class NotifikasiController extends Controller
                     ->where('mahasiswa_nim', $request->nim)
                     ->update([
                         'tahap_wawancara' => false,
-                        'pendaftaran_selesai' => true
+                        'pendaftaran_selesai' => true,
+                        'status' => 'Diterima'
                     ]);
                 }
             }
@@ -70,7 +71,12 @@ class NotifikasiController extends Controller
                 DB::table('pendaftar')
                 ->where('organisasi_id', $request->organisasi_id)
                 ->where('mahasiswa_nim', $request->nim)
-                ->delete();
+                ->update([
+                    'tahap_administrasi' => false,
+                    'tahap_wawancara' => false,
+                    'pendaftaran_selesai' => false,
+                    'status' => 'Ditolak'
+                ]);
             }
     
 } catch (\Exception $e) {

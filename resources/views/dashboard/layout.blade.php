@@ -356,7 +356,7 @@
                   >
                     <div class="avatar-sm">
                       <img
-                        src="https://api.dicebear.com/9.x/big-smile/svg?seed={{$data_user->Nama_Organisasi}}"
+                        src="https://avatar.iran.liara.run/public/3"
                         alt="..."
                         class="avatar-img rounded-circle"
                       />
@@ -372,7 +372,7 @@
                         <div class="user-box">
                           <div class="avatar-lg">
                             <img
-                              src="https://api.dicebear.com/9.x/big-smile/svg?seed={{$data_user->Nama_Organisasi}}"
+                              src="https://avatar.iran.liara.run/public/3"
                               alt="image profile"
                               class="avatar-img rounded"
                             />

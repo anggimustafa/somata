@@ -115,6 +115,7 @@ class PostinganController extends Controller
 
 
         DB::table('postingan_pendaftaran')->where('id', $id)->delete();
+        DB::table('pendaftar')->where('organisasi_id', $organisasi_id)->delete();
 
 
         return redirect('/postingan?id='. $organisasi_id )->with('success', 'Postingan berhasil dihapus');

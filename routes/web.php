@@ -122,7 +122,9 @@ Route::resource('/notifikasi', NotifikasiController::class);
 Route::get('/dashboard', function (Request $request) {
     $data_user = DB::table('user_organisasi')->where('Organisasi_id', $request->id)
                                             ->first();
-    return view('dashboard.index', compact('data_user'));
+    $pendaftar = DB::table('pendaftar')->where('organisasi_id', $request->id)->get();
+    $pendaftars = $pendaftar->count();
+    return view('dashboard.index', compact('data_user', 'pendaftars'));
 });
 
 
@@ -205,10 +207,15 @@ Route::get('/pendaftaran_selesai', function (Request $request) {
                                             ->first();
 
     $data_pendaftar = DB::table('pendaftar')->where('organisasi_id', $request->id)
-                                            ->where('pendaftaran_selesai', true)
+                                            ->where(function ($query) {
+                                                $query->where('pendaftaran_selesai', true)
+                                                      ->orWhere('status', 'Ditolak');
+                                            })
                                             ->get();
+                        
 
     $motivasi = $data_pendaftar->pluck('motivasi')->toArray();
+    $status = $data_pendaftar->pluck('status')->toArray();
     $mahasiswa_nims = $data_pendaftar->pluck('mahasiswa_nim')->toArray();
 
     $list_mahasiswa = DB::table('user_mahasiswa')
@@ -231,5 +238,5 @@ Route::get('/pendaftaran_selesai', function (Request $request) {
     )
     ->get();
 
-    return view('dashboard.pendaftaran_selesai', compact('data_user','data_pendaftar','list_mahasiswa','motivasi'));
+    return view('dashboard.pendaftaran_selesai', compact('data_user','data_pendaftar','list_mahasiswa','motivasi', 'status'));
 });
